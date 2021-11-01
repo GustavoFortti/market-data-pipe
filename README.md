@@ -5,4 +5,3 @@ sh build.sh && sh start.sh
 # Execute project
 
 sh launcher.sh <params>
-sh launcher.sh <params>
