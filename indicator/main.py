@@ -8,7 +8,7 @@ if __name__ == '__main__':
     start_time = time.time()
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m" ,"--mode", help="tr - train data, te - test predict, pr - predict data, td - test data, gd - generate data", required=True)
+    parser.add_argument("-e" ,"--exemple", help="", required=True)
     args = parser.parse_args()
     if (not args.index): args.index = 0
 

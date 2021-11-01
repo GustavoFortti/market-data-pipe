@@ -1,4 +1,3 @@
-git checkout master
 for i in indicator model model_ant new report synphony; do
     git checkout dev-$i
     git merge master
@@ -7,3 +6,4 @@ for i in indicator model model_ant new report synphony; do
     git push -u origin dev-$i
     sleep 3
 done
+git checkout master
