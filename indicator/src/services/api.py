@@ -1,22 +1,11 @@
-import os
-import sys
-
 import pandas as pd
 import yfinance as yf
 
-def Api_market(mode: str, config: dict) -> None:
-    currency = config['market']['currency']
-    path = config['path']
-    request = config['market']['request']
+def api_market(conf: dict) -> pd.DataFrame:
+    df = yf.Ticker(conf['currency']).history(period="max")
+    df = df.loc[:, conf['columns']]
+    df = df.dropna()
+    for i in df.columns: df = df[df[i] != 0]
+    df.to_csv(conf['path_data'])
 
-    file = path + currency + '.csv'
-    if ((request) | (not os.path.isfile(file)) | (mode == 'pr')):
-        data = yf.Ticker(currency)
-        data = data.history(period="max")
-        data = data.loc[:, config['data']['predict']['columns']]
-        data = data.dropna()
-        for i in data.columns: 
-            data = data[data[i] != 0]
-        data.to_csv(file)
-    else:
-        data = pd.read_csv(file, index_col='Date')
+    return df

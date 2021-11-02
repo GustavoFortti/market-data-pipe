@@ -2,12 +2,14 @@ import numpy as np
 from pandas import DataFrame
 
 class Ema(object):
-    def __init__(self, period):
+    def __init__(self, period, data):
+        self.data = data
         self.period = period
         self.k = 2 / (period + 1)
         self.prev_ema = None
 
     def calc_ema(self, data):
+        if (self.data != None): data = self.data
         # initialize seed and first value
         seed = sum(data[:self.period]) / self.period
         ema = [(data[0] * self.k) + (seed * (1 - self.k))]
@@ -26,6 +28,9 @@ class Ema(object):
         self.prev_ema = (value * self.k) + (self.prev_ema * (1 - self.k))
 
         return self.prev_ema
+
+    def get_values(self):
+        return self.values
     
 
 class Macd(object):
