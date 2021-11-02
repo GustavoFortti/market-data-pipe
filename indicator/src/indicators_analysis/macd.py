@@ -2,14 +2,13 @@ import numpy as np
 from pandas import DataFrame
 
 class Ema(object):
-    def __init__(self, period, data):
-        self.data = data
-        self.period = period
-        self.k = 2 / (period + 1)
+    def __init__(self, data, params: dict={'period': 14}):
+        self.period = params['period']
+        self.k = 2 / (self.period + 1)
         self.prev_ema = None
+        self.values = self.calc_ema(data)
 
     def calc_ema(self, data):
-        if (self.data != None): data = self.data
         # initialize seed and first value
         seed = sum(data[:self.period]) / self.period
         ema = [(data[0] * self.k) + (seed * (1 - self.k))]
