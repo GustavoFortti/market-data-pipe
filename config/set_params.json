@@ -1,0 +1,34 @@
+{
+    "indicator": {
+         "params": [{"currency": "c"}],
+         "params_save": {
+               "set-1": {"curency": "XOM"},
+               "set-2": {"curency": "BTC-USD"}
+         }
+     },
+     "model_ant": {
+          "params": [{"currency": "c", "date": "d"}],
+          "params_save": {
+               "set-1": {"indicator": "set-1", "date": "20211102", "d-matrix": "3", "set_variables": "set-1"},
+               "set-2": {"indicator": "set-1", "date": "20211102", "d-matrix": "2", "set_variables": "set-1"}
+          }
+     },
+     "model": {
+         "params": [{"currency": "c", "date": "d"}],
+         "params_save": {
+               "set-1": {"model_ant": "set-1", "models": {"type": "LSTM", "d-matrix": "3"}},
+               "set-2": {"model_ant": "set-1", "models": {"type": "D3", "d-matrix": "2"}},
+               "set-3": {"model_ant": "set-1", "models": {"type": "SVR", "d-matrix": "2"}}
+         }
+    },
+    "report": {
+         "": {
+             
+         }
+    },
+    "new": {
+         "": {
+             
+         }
+    }
+}
