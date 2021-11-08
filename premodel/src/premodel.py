@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 
-def model_ant(currency: str, date: str, d_matrix: str, variables: str, timestemp: int=8):
+def premodel(currency: str, date: str, d_matrix: str, variables: str, timestemp: int=8):
     path = f'./../data/indicator/{currency}/variable/{date}.csv'
     df = pd.read_csv(path, index_col='Date')
     df = df.loc[:, variables['variables']]
@@ -20,7 +20,7 @@ def matrix_3d(x: np.array, timestemp: int) -> list:
     return np.array(reshaped_x)
 
 def save(x: np.array, y: np.array, df: pd.DataFrame, target: pd.DataFrame, currency: str) -> None:
-    save_path = f'./../data/model_ant/{currency}/'
+    save_path = f'./../data/premodel/{currency}/'
     if (not os.path.exists(save_path)): os.makedirs(save_path)
 
     np.save(f'{save_path}/x', x)

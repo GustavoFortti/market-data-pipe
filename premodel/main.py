@@ -5,14 +5,14 @@ import json
 import time
 import argparse
 
-from src.model_ant import model_ant
+from src.premodel import premodel
 
 PATH_PARAMS = '../config/params.json'
 PATH_VARIABLES = '../config/variables.json'
 
 def main(args: list):
     currency, variables = read_config(args.indicator, args.variables)
-    model_ant(currency, args.date, args.d_matrix, variables)
+    premodel(currency, args.date, args.d_matrix, variables)
 
 def read_config(indicator: str, variables: str) -> list:
     f_params = open(PATH_PARAMS)
