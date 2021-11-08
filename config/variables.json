@@ -1,0 +1,10 @@
+{
+    "set-1": {
+        "variables": ["Close_Ema_5", "Close_Ema_5_PolyInter"],
+        "target": "Close_Ema_5"
+    },
+    "set-2": {
+        "variables": ["Close_Ema_5_9", "Close_Ema_5_5_PolyInter"],
+        "target": "Close_Ema_5_9"
+    }
+}

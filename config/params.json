@@ -2,15 +2,15 @@
     "indicator": {
          "params": [{"currency": "c"}],
          "params_save": {
-               "set-1": {"curency": "XOM"},
-               "set-2": {"curency": "BTC-USD"}
+               "set-1": {"currency": "XOM"},
+               "set-2": {"currency": "BTC-USD"}
          }
      },
      "model_ant": {
           "params": [{"currency": "c", "date": "d"}],
           "params_save": {
-               "set-1": {"indicator": "set-1", "date": "20211102", "d_matrix": "3", "set_variables": "set-1"},
-               "set-2": {"indicator": "set-1", "date": "20211102", "d_matrix": "2", "set_variables": "set-1"}
+               "set-1": {"indicator": "set-1", "date": "20211102", "d_matrix": "3", "variables": "set-1"},
+               "set-2": {"indicator": "set-1", "date": "20211102", "d_matrix": "2", "variables": "set-1"}
           }
      },
      "model": {
