@@ -1,3 +1,5 @@
+git checkout master
+git pull
 for i in indicator model model_ant new report; do
     git checkout dev-$i
     git merge master
