@@ -1,6 +1,6 @@
 git checkout premaster
 git pull
-for i in indicator model model_ant new report; do
+for i in indicator model premodel new report; do
     git checkout dev-$i
     git merge premaster
     git add .
