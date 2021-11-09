@@ -1,0 +1,32 @@
+{
+    "indicator": {
+         "params": ["currency"],
+         "params_save": {
+               "1-set": {"currency": "XOM"},
+               "2-set": {"currency": "BTC-USD"}
+         }
+     },
+     "premodel": {
+          "params": ["currency", "date", "d_matrix", "pretictor", "target", "timestamp"],
+          "params_save": {
+               "1-set": {"indicator": "1-set", "date": "20211102", "d_matrix": "3", "variables": "1-set", "timestamp": "30"},
+               "2-set": {"indicator": "1-set", "date": "20211102", "d_matrix": "3", "variables": "2-set", "timestamp": "30"},
+               "3-set": {"indicator": "1-set", "date": "20211102", "d_matrix": "3", "variables": "3-set", "timestamp": "30"}
+          }
+     },
+     "model": {
+          "": {
+              
+          }
+    },
+    "report": {
+         "": {
+             
+         }
+    },
+    "new": {
+         "": {
+             
+         }
+    }
+}

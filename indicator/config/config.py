@@ -9,14 +9,10 @@ def create_path(path_data: str, name: str):
     return path_data
 
 def config(currency: str) -> dict:
-    date = datetime.today().strftime('%Y%m%d')
-    name = f'{date}.csv'
-    path_variable_data = create_path(f'./../data/indicator/{currency}/variable/', name)
-    path_api_data = create_path(f'./../data/indicator/{currency}/api/', name)
+    path_variable_data = create_path(f'./data/indicator/{currency}/', 'data.csv')
 
     return {
         "currency": f'{currency}',
-        "path_api_data": path_api_data,
         "path_variable_data": path_variable_data,
         "columns": ["Open", "Close", "High", "Low", "Volume"]
     }
