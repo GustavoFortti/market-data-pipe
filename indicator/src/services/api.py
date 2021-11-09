@@ -7,5 +7,4 @@ def api_market(conf: dict) -> pd.DataFrame:
     df = df.loc[:, conf['columns']]
     df = df.dropna()
     for i in df.columns: df = df[df[i] != 0]
-    save_data(df, conf['path_api_data'])
     return df

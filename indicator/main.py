@@ -7,7 +7,7 @@ import argparse
 from src.indicator import indicator
 
 def main(args: list):
-    indicator(args.currency)
+    indicator(currency=args.currency)
 
 if __name__ == '__main__':
     start_time = time.time()

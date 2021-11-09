@@ -1,34 +1,23 @@
 {
-    "indicator": {
-         "params": [{"currency": "c"}],
-         "params_save": {
-               "set-1": {"currency": "XOM"},
-               "set-2": {"currency": "BTC-USD"}
-         }
-     },
-     "model_ant": {
-          "params": [{"currency": "c", "date": "d"}],
-          "params_save": {
-               "set-1": {"indicator": "set-1", "date": "20211102", "d_matrix": "3", "variables": "set-1"},
-               "set-2": {"indicator": "set-1", "date": "20211102", "d_matrix": "2", "variables": "set-1"}
-          }
-     },
-     "model": {
-         "params": [{"currency": "c", "date": "d"}],
-         "params_save": {
-               "set-1": {"model_ant": "set-1", "models": {"type": "LSTM", "d_matrix": "3"}},
-               "set-2": {"model_ant": "set-1", "models": {"type": "D3", "d_matrix": "2"}},
-               "set-3": {"model_ant": "set-1", "models": {"type": "SVR", "d_matrix": "2"}}
-         }
+    "1-set": {
+        "indicator": "1-set",
+        "new": "1-set",
+        "premodel": "1-set",
+        "model": "1-set",
+        "report": "1-set"
     },
-    "report": {
-         "": {
-             
-         }
+    "2-set": {
+        "indicator": "1-set",
+        "new": "1-set",
+        "premodel": "2-set",
+        "model": "1-set",
+        "report": "1-set"
     },
-    "new": {
-         "": {
-             
-         }
+    "3-set": {
+        "indicator": "1-set",
+        "new": "1-set",
+        "premodel": "3-set",
+        "model": "1-set",
+        "report": "1-set"
     }
 }
