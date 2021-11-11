@@ -6,7 +6,7 @@ import argparse
 
 from src.indicator import indicator
 
-def main(args: list):
+def main(args: list) -> None:
     indicator(currency=args.currency)
 
 if __name__ == '__main__':

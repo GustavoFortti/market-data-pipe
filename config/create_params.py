@@ -24,14 +24,18 @@ def contruct_param(name: str, projects: dict, params_set: dict, variables: dict)
     for i in projects[name]["params"]: 
         params = params.replace(i, f'|--{i}')
     
+    def ax_replace(x, y): 
+        for i in x: y = y.replace(i, '')
+        return y
+
     ax_params = []
     for i in f' {params}'.split(' |')[1:]:
         ax_value = i.split(' ')[1:]
         ax_key = i.split(' ')[0]
         ax_params.append(ax_key)
-        if (len(ax_value) > 1): ax_params.append(str([ax_value][0]).replace(' ', ''))
-        else: ax_params.append(str([ax_value][0][0]))
-
+        if (len(ax_value) > 1): 
+            ax_params.append(ax_replace([' ', ']', '[', "'"], str(ax_value)))
+        else: ax_params.append(str(ax_value[0]))
     params = destruct_list(ax_params)
     return params
 

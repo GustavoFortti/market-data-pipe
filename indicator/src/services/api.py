@@ -1,6 +1,5 @@
 import pandas as pd
 import yfinance as yf
-from config.config import save_data
 
 def api_market(conf: dict) -> pd.DataFrame:
     df = yf.Ticker(conf['currency']).history(period="max")

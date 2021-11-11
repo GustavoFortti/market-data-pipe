@@ -4,7 +4,7 @@ from copy import deepcopy
 import pandas as pd
 import numpy as np
 
-from config.config import config, save_data
+from config.config import config
 from src.services.api import api_market
 
 import ta
@@ -67,3 +67,10 @@ def prepare_indicatores() -> list:
     ]
 
     return [indicators_columns, indicators]
+
+def save_data(df: pd.DataFrame, path: str) -> None:
+    try: 
+        df.to_csv(path)
+        print(f'save data - {path}')
+    except:
+        print(f'error to save data - {path}')

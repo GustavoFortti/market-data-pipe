@@ -9,3 +9,6 @@ for i in indicator model premodel new report; do
     sleep 3
 done
 git checkout premaster
+
+# git branch -D <nome do branch>
+# git push <nome do origin> <nome do branch> --delete
