@@ -24,7 +24,7 @@ def matrix_3d(x: np.array, timestemp: int) -> list:
     return np.array(reshaped_x)
 
 def save(x: np.array, y: np.array, df: pd.DataFrame, target: pd.DataFrame, currency: str, d_matrix: str, type_situation: str, time_ahead: str) -> None:
-    save_path = f'./data/premodel/{currency}/'
+    save_path = f'./data/premodel/{currency}/time_ahead_{time_ahead}'
     if (not os.path.exists(save_path)): os.makedirs(save_path)
 
     np.save(f'{save_path}/x_{d_matrix}d_{type_situation}_{time_ahead}tah', x)
