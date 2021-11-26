@@ -3,11 +3,15 @@ import json
 def return_params(set: str) -> str:
     params, projects, variables = open('./config/params.json', 'r'), open('./config/projects.json', 'r'), open('./config/variables.json', 'r')
     params, projects, variables = json.load(params), json.load(projects), json.load(variables)
-
     params_set = params[set]
-    indicator = contruct_param('indicator', projects, params_set, variables)
-    premodel = contruct_param('premodel', projects, params_set, variables)
-    return [indicator, premodel]
+
+    gen_params = lambda project: contruct_param(project, projects, params_set, variables)
+
+    indicator = gen_params('indicator')
+    premodel = gen_params('premodel')
+    model = gen_params('model')
+
+    return [indicator, premodel, model]
 
 def contruct_param(name: str, projects: dict, params_set: dict, variables: dict):
     params = projects[name]['params_save'][params_set[name]]

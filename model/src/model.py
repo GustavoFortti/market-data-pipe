@@ -1,2 +1,2 @@
-def model():
-    pass
+def model(config):
+    print(config)

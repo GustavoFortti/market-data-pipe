@@ -26,7 +26,6 @@ def indicator(currency: str) -> None:
 
     print(df)
     save_data(df, conf['path_variable_data'])
-     
 
 def add_indicators(df: pd.DataFrame, indicators: list) -> pd.DataFrame:
     df = deepcopy(df)
