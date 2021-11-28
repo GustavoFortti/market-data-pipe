@@ -4,7 +4,7 @@ from copy import deepcopy
 import pandas as pd
 import numpy as np
 
-from config.config import config
+from config.contructor import contructor
 from src.services.api import api_market
 
 import ta
@@ -15,7 +15,7 @@ from src.indicators_analysis.sar_parabolic import Parabolic_sar
 from src.indicators_analysis.macd import Ema
 
 def indicator(currency: str) -> None:
-    conf = config(currency)
+    conf = contructor(currency)
     df = api_market(conf)
 
     indicators_columns, indicators = prepare_indicatores()

@@ -7,7 +7,7 @@
          }
      },
      "premodel": {
-          "params": ["currency", "date", "d_matrix", "predictor", "target", "timestemp", "time_ahead"],
+          "params": ["currency", "date", "d_matrix", "variables", "timestemp", "time_ahead"],
           "params_save": {
                "1-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "1"},
                "2-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "2"},
@@ -15,7 +15,7 @@
           }
      },
      "model": {
-          "params": ["currency", "date", "d_matrix", "predictor", "target", "timestemp", "time_ahead", "question", "group_methods", "hiperparams", "optimization"],
+          "params": ["currency", "date", "d_matrix", "variables", "timestemp", "time_ahead", "question", "group_methods", "hiperparams", "optimization"],
           "params_save": {
                "1-set": {"premodel": "1-set", "question": "price", "group_methods": "LSTM", "hiperparams": "null", "optimization": "null"}
           }

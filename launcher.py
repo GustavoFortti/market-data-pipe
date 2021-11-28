@@ -9,4 +9,5 @@ indicator, premodel, model = return_params('1-set')
 # print(f'premodel params...\n\t{premodel}')
 # os.system(f'python3 ./premodel/main.py {premodel}')
 
-print(f'premodel params...\n\t{model}')
+print(f'model params...\n\t{model}')
+os.system(f'python3 ./model/main.py {model}')
