@@ -19,4 +19,4 @@ def model(metrics: dict) -> None:
     run = importlib.import_module("src.methods.GR1")
     run.method()
 
-    run.predict()
+    # run.predict()

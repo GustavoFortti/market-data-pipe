@@ -1,8 +1,9 @@
 import sys
-from copy import deepcopy
+from copy import Error, deepcopy
 
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 
 from config.contructor import contructor
 from src.services.api import api_market
@@ -23,9 +24,24 @@ def indicator(currency: str) -> None:
     df = col_greater_then(df, indicators_columns)
     df = col_parabolic_sar(df, [['High_Ema_5', 'Low_Ema_5'], ['High_Ema_9', 'Low_Ema_9'], ['High_Ema_12', 'Low_Ema_12'], ['High', 'Low']])
     df = ta.add_all_ta_features(df=df, close="Close", high='High', low='Low', open="Open", volume="Volume", fillna=True)
+    df = cols_diff(df)
 
     print(df)
     save_data(df, conf['path_variable_data'])
+
+    scaler = StandardScaler()
+    scaler.fit(df)
+    df_scaler = pd.DataFrame(scaler.transform(df), columns=df.columns, index=df.index)
+    print(df_scaler)
+    save_data(df_scaler, conf['path_variable_data_scaler'])
+
+def cols_diff(df: pd.DataFrame) -> pd.DataFrame:
+    df = deepcopy(df)
+    def diff(df, col):
+        df[f'{col}_diff'] = df[col].diff()
+
+    [diff(df, i) for i in df.columns]
+    return df
 
 def add_indicators(df: pd.DataFrame, indicators: list) -> pd.DataFrame:
     df = deepcopy(df)
@@ -71,5 +87,6 @@ def save_data(df: pd.DataFrame, path: str) -> None:
     try: 
         df.to_csv(path)
         print(f'save data - {path}')
-    except:
-        print(f'error to save data - {path}')
+    except Exception as error:
+        print(f'error to save data - {path}\n')
+        print(error)
