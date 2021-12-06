@@ -1,23 +1,62 @@
 {
     "1-set": {
         "indicator": "1-set",
-        "new": "1-set",
         "premodel": "1-set",
-        "model": "1-set",
-        "report": "1-set"
+        "model": "1-set"
     },
     "2-set": {
         "indicator": "1-set",
-        "new": "1-set",
         "premodel": "2-set",
-        "model": "1-set",
-        "report": "1-set"
+        "model": "1-set"
     },
     "3-set": {
         "indicator": "1-set",
-        "new": "1-set",
         "premodel": "3-set",
-        "model": "1-set",
-        "report": "1-set"
+        "model": "1-set"
+    },
+    "4-set": {
+        "indicator": "1-set",
+        "premodel": "4-set",
+        "model": "1-set"
+    },
+    "5-set": {
+        "indicator": "1-set",
+        "premodel": "5-set",
+        "model": "1-set"
+    },
+    "6-set": {
+        "indicator": "1-set",
+        "premodel": "6-set",
+        "model": "1-set"
+    },
+    "7-set": {
+        "indicator": "1-set",
+        "premodel": "7-set",
+        "model": "1-set"
+    },
+    "8-set": {
+        "indicator": "1-set",
+        "premodel": "8-set",
+        "model": "1-set"
+    },
+    "9-set": {
+        "indicator": "1-set",
+        "premodel": "9-set",
+        "model": "1-set"
+    },
+    "10-set": {
+        "indicator": "1-set",
+        "premodel": "10-set",
+        "model": "1-set"
+    },
+    "11-set": {
+        "indicator": "1-set",
+        "premodel": "11-set",
+        "model": "1-set"
+    },
+    "12-set": {
+        "indicator": "1-set",
+        "premodel": "12-set",
+        "model": "1-set"
     }
 }

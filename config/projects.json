@@ -7,26 +7,26 @@
          }
      },
      "premodel": {
-          "params": ["currency", "date", "d_matrix", "predictor", "target", "timestemp", "time_ahead"],
+          "params": ["currency", "date", "d_matrix", "variables", "timestemp", "time_ahead"],
           "params_save": {
-               "1-set": {"indicator": "1-set", "date": "20211102", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "1"},
-               "2-set": {"indicator": "1-set", "date": "20211102", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "2"},
-               "3-set": {"indicator": "1-set", "date": "20211102", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "3"}
+               "1-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "1"},
+               "2-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "2"},
+               "3-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "3"},
+               "4-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "4"},
+               "5-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "2-set", "timestemp": "30", "time_ahead": "1"},
+               "6-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "2-set", "timestemp": "30", "time_ahead": "2"},
+               "7-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "2-set", "timestemp": "30", "time_ahead": "3"},
+               "8-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "2-set", "timestemp": "30", "time_ahead": "4"},
+               "9-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "3-set", "timestemp": "30", "time_ahead": "1"},
+               "10-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "3-set", "timestemp": "30", "time_ahead": "2"},
+               "11-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "3-set", "timestemp": "30", "time_ahead": "3"},
+               "12-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "3-set", "timestemp": "30", "time_ahead": "4"}
           }
      },
      "model": {
-          "": {
-              
+          "params": ["currency", "date", "d_matrix", "variables", "timestemp", "time_ahead", "question", "group_methods", "hiperparams", "optimization"],
+          "params_save": {
+               "1-set": {"premodel": "1-set", "question": "price", "group_methods": "LSTM", "hiperparams": "null", "optimization": "null"}
           }
-    },
-    "report": {
-         "": {
-             
-         }
-    },
-    "new": {
-         "": {
-             
-         }
     }
 }

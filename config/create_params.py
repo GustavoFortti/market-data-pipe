@@ -1,25 +1,29 @@
 import json
 
 def return_params(set: str) -> str:
-    params, projects, variables = open('./config/params.json', 'r'), open('./config/projects.json', 'r'), open('./config/variables.json', 'r')
-    params, projects, variables = json.load(params), json.load(projects), json.load(variables)
-
+    read_json = lambda file: json.load(open(f'./config/{file}.json', 'r'))
+    params, projects = read_json('params'), read_json('projects')
     params_set = params[set]
-    indicator = contruct_param('indicator', projects, params_set, variables)
-    premodel = contruct_param('premodel', projects, params_set, variables)
-    return [indicator, premodel]
 
-def contruct_param(name: str, projects: dict, params_set: dict, variables: dict):
+    ax_contruct_param = lambda project: contruct_param(project, projects, params_set)
+
+    indicator = ax_contruct_param('indicator')
+    premodel = ax_contruct_param('premodel')
+    model = ax_contruct_param('model')
+
+    return [indicator, premodel, model]
+
+def contruct_param(name: str, projects: dict, params_set: dict):
     params = projects[name]['params_save'][params_set[name]]
     for i in params:
         value = params[i]
         if ('set' in value):
-            if (i == 'variables'): params[i] = variables[value]
-            elif (i in projects.keys()): 
+            if (i in projects.keys()): 
                 params[i] = projects[i]['params_save'][value]
         
     params = [destruct_dict(i, j) for i, j in zip(params.keys(), params.values())]
     params = destruct_list(params)
+
 
     for i in projects[name]["params"]: 
         params = params.replace(i, f'|--{i}')

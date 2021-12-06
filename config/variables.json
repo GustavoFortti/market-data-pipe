@@ -1,14 +1,14 @@
 {
     "1-set": {
-        "predictor": ["Close_Ema_5", "Close_Ema_5_PolyInter"],
-        "target": "Close_Ema_5"
+        "predictor": ["all"],
+        "target": "Close_Ema_5_diff"
     },
     "2-set": {
-        "predictor": ["Close_Ema_9", "Close_Ema_9_PolyInter"],
-        "target": "Close_Ema_9"
+        "predictor": ["all"],
+        "target": "Close_Ema_9_diff"
     },
     "3-set": {
-        "predictor": ["Close_Ema_12", "Close_Ema_12_PolyInter"],
-        "target": "Close_Ema_12"
+        "predictor": ["all"],
+        "target": "Close_Ema_12_diff"
     }
 }
