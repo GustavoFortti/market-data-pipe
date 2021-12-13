@@ -20,10 +20,10 @@ def premodel(currency: str,
     target = df.loc[:, variables['target']].drop(columns='Date')
     
     for i in ['pred', 'train']:
-        # x, y = np.array(df), np.array(target)
-        # if (i == 'train'): x, y = x[100: -(time_ahead)], y[(100 + time_ahead):]
-        # else: x, y = x[100:], y[100:]
-        # if (d_matrix == '3'): x = matrix_3d(x, timestemp)
+        x, y = np.array(df), np.array(target)
+        if (i == 'train'): x, y = x[100: -(time_ahead)], y[(100 + time_ahead):]
+        else: x, y = x[100:], y[100:]
+        if (d_matrix == '3'): x = matrix_3d(x, timestemp)
         save(x=x,
              y=y,
              df=df.iloc[100: -(time_ahead), :],
