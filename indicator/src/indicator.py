@@ -19,12 +19,13 @@ def indicator(currency: str) -> None:
     conf = contructor(currency)
     df = api_market(conf)
 
-    indicators_columns, indicators = prepare_indicatores()
-    df = add_indicators(df, indicators)
-    df = col_greater_then(df, indicators_columns)
-    df = col_parabolic_sar(df, [['High_Ema_5', 'Low_Ema_5'], ['High_Ema_9', 'Low_Ema_9'], ['High_Ema_12', 'Low_Ema_12'], ['High', 'Low']])
-    df = ta.add_all_ta_features(df=df, close="Close", high='High', low='Low', open="Open", volume="Volume", fillna=True)
-    df = cols_diff(df)
+    # indicators_columns, indicators = prepare_indicatores()
+    # df = add_indicators(df, indicators)
+    # df = col_greater_then(df, indicators_columns)
+    # df = col_parabolic_sar(df, [['High_Ema_5', 'Low_Ema_5'], ['High_Ema_9', 'Low_Ema_9'], ['High_Ema_12', 'Low_Ema_12'], ['High', 'Low']])
+    # df = ta.add_all_ta_features(df=df, close="Close", high='High', low='Low', open="Open", volume="Volume", fillna=True)
+    # df = cols_diff(df)
+    df = df.loc[:, ['Close']]
 
     print(df)
     save_data(df, conf['path_variable_data'])

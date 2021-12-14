@@ -7,14 +7,14 @@ from src.premodel import premodel
 
 def main(args: list) -> None:
     variables = read_params(args.variables)
-#     premodel(currency=args.currency, 
-#             date=args.date, 
-#             d_matrix=args.d_matrix, 
-#             variables=variables, 
-#             variables_set=args.variables, 
-#             timestemp=args.timestemp, 
-#             time_ahead=args.time_ahead,
-#             data_name='data')
+    premodel(currency=args.currency, 
+            date=args.date, 
+            d_matrix=args.d_matrix, 
+            variables=variables, 
+            variables_set=args.variables, 
+            timestemp=args.timestemp, 
+            time_ahead=args.time_ahead,
+            data_name='data')
 
     premodel(currency=args.currency, 
             date=args.date, 
