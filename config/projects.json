@@ -13,14 +13,14 @@
                "2-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "2"},
                "3-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "3"},
                "4-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "4"},
-               "5-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "2-set", "timestemp": "30", "time_ahead": "1"},
-               "6-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "2-set", "timestemp": "30", "time_ahead": "2"},
-               "7-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "2-set", "timestemp": "30", "time_ahead": "3"},
-               "8-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "2-set", "timestemp": "30", "time_ahead": "4"},
-               "9-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "3-set", "timestemp": "30", "time_ahead": "1"},
-               "10-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "3-set", "timestemp": "30", "time_ahead": "2"},
-               "11-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "3-set", "timestemp": "30", "time_ahead": "3"},
-               "12-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "3-set", "timestemp": "30", "time_ahead": "4"}
+               "5-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "5"},
+               "6-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "6"},
+               "7-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "7"},
+               "8-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "8"},
+               "9-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "9"},
+               "10-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "10"},
+               "11-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "11"},
+               "12-set": {"indicator": "1-set", "date": "today", "d_matrix": "3", "variables": "1-set", "timestemp": "30", "time_ahead": "12"}
           }
      },
      "model": {

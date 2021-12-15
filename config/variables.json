@@ -1,7 +1,7 @@
 {
     "1-set": {
-        "predictor": ["Close"],
-        "target": "Close"
+        "predictor": ["Close_Ema_21"],
+        "target": "Close_Ema_21"
     },
     "2-set": {
         "predictor": ["all"],

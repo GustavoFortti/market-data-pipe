@@ -19,13 +19,13 @@ def indicator(currency: str) -> None:
     conf = contructor(currency)
     df = api_market(conf)
 
-    # indicators_columns, indicators = prepare_indicatores()
-    # df = add_indicators(df, indicators)
+    indicators_columns, indicators = prepare_indicatores()
+    df = add_indicators(df, indicators)
     # df = col_greater_then(df, indicators_columns)
     # df = col_parabolic_sar(df, [['High_Ema_5', 'Low_Ema_5'], ['High_Ema_9', 'Low_Ema_9'], ['High_Ema_12', 'Low_Ema_12'], ['High', 'Low']])
     # df = ta.add_all_ta_features(df=df, close="Close", high='High', low='Low', open="Open", volume="Volume", fillna=True)
     # df = cols_diff(df)
-    df = df.loc[:, ['Close']]
+    df = df.loc[:, ['Close', 'Close_Ema_21']]
 
     print(df)
     save_data(df, conf['path_variable_data'])
@@ -68,18 +68,20 @@ def prepare_indicatores() -> list:
     default_columns = ['Close', 'High', 'Low', 'Open']
 
     Ema_columns = [
-        'Close_Ema_5', 'High_Ema_5', 'Low_Ema_5', 'Open_Ema_5', 
-        'Close_Ema_9', 'High_Ema_9', 'Low_Ema_9', 'Open_Ema_9', 
-        'Close_Ema_12', 'High_Ema_12', 'Low_Ema_12', 'Open_Ema_12'
+        # 'Close_Ema_5', 'High_Ema_5', 'Low_Ema_5', 'Open_Ema_5', 
+        # 'Close_Ema_9', 'High_Ema_9', 'Low_Ema_9', 'Open_Ema_9', 
+        # 'Close_Ema_12', 'High_Ema_12', 'Low_Ema_12', 'Open_Ema_12'
+        'Close_Ema_21'
     ]
 
     indicators_columns = np.append(default_columns, Ema_columns)
     indicators = [
-        {"name": "Ema_5", "columns": default_columns, "method": Ema, "params": {"period":5}},
-        {"name": "Ema_9", "columns": default_columns, "method": Ema, "params": {"period":9}},
-        {"name": "Ema_12", "columns": default_columns, "method": Ema, "params": {"period":12}},
-        {"name": "labels", "columns": indicators_columns, "method": Genlabels, "params": {"window": 29, "polyorder": 3}},
-        {"name": "PolyInter", "columns": indicators_columns, "method": PolyInter, "params": {"degree":4, "pd":20, "plot":False, "progress_bar":True}},
+        # {"name": "Ema_5", "columns": default_columns, "method": Ema, "params": {"period":5}},
+        # {"name": "Ema_9", "columns": default_columns, "method": Ema, "params": {"period":9}},
+        # {"name": "Ema_12", "columns": default_columns, "method": Ema, "params": {"period":12}},
+        {"name": "Ema_21", "columns": ['Close'], "method": Ema, "params": {"period":21}},
+        # {"name": "labels", "columns": indicators_columns, "method": Genlabels, "params": {"window": 29, "polyorder": 3}},
+        # {"name": "PolyInter", "columns": indicators_columns, "method": PolyInter, "params": {"degree":4, "pd":20, "plot":False, "progress_bar":True}},
     ]
 
     return [indicators_columns, indicators]

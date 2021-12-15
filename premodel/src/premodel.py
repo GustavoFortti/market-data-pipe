@@ -55,11 +55,11 @@ def save(x: np.array,
     save_path = f'./data/premodel/{currency}/{variables_set}/time_ahead_{time_ahead}/{data_name}/'
     if (not os.path.exists(save_path)): os.makedirs(save_path)
 
-    # np.save(f'{save_path}/x_{d_matrix}d_{type_situation}', x)
+    np.save(f'{save_path}/x_{d_matrix}d_{type_situation}', x)
     # np.savez_compressed(f'{save_path}/x_{d_matrix}d_{type_situation}', x)
 
     if (type_situation == 'train'): 
-        # np.save(f'{save_path}/y_1d_train', y)
+        np.save(f'{save_path}/y_1d_train', y)
         # np.savez_compressed(f'{save_path}/y_1d_train', y)
         # np.load(f'{save_path}/y_1d_train', mmap_mode='r+')
         df.to_csv(f'{save_path}/df.csv')
