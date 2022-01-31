@@ -30,7 +30,6 @@ class Ema(object):
 
     def get_values(self):
         return self.values
-    
 
 class Macd(object):
     def __init__(self, data: DataFrame, params: dict={'short_pd':12, 'long_pd':26, 'sig_pd':9}):

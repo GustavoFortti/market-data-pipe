@@ -25,7 +25,7 @@ def premodel(currency: str,
         else: x, y = x[100:], y[100:]
         if (d_matrix == '3'): x = matrix_3d(x, timestemp)
         save(x=x,
-             y=y,
+             y=y[timestemp - 1:],
              df=df.iloc[100: -(time_ahead), :],
              target=target.iloc[(100 + time_ahead):],
              currency=currency,
@@ -51,6 +51,9 @@ def save(x: np.array,
         time_ahead: str,
         variables_set: str,
         data_name: str) -> None:
+
+    print(x.shape)
+    print(y.shape)
 
     save_path = f'./data/premodel/{currency}/{variables_set}/time_ahead_{time_ahead}/{data_name}/'
     if (not os.path.exists(save_path)): os.makedirs(save_path)
